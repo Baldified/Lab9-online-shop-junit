@@ -77,5 +77,36 @@ public class SalesItemTest
         assertEquals(false, salesIte1.addComment("a", "a", 0));
         assertEquals(false, salesIte1.addComment("b", "b", 6));
     }
+
+    /*@Test
+    public void checkFindMostHelpfulComment()
+    {
+        SalesItem salesIte1 = new SalesItem("cookies", 1499);
+        salesIte1.addComment("bruce", "Stupidly expensive cookie", 2);
+        salesIte1.addComment("daniel", "Never though inflation would hit that hard", 1);
+        salesIte1.upvoteComment(1);
+        salesIte1.upvoteComment(1);
+        assertEquals(, salesIte1.findMostHelpfulComment());
+    }*/
+
+    @Test
+    public void checkFindMostHelpfulComment()
+    {
+        SalesItem salesIte1 = new SalesItem("ghost pepper doritos", 2199);
+        salesIte1.addComment("bruce", "man this sucks", 5);
+        salesIte1.addComment("daniel", "Dont watch the dorito add where there is hole that cleans dirty fingers[skull]", 2);
+        salesIte1.upvoteComment(1);
+        Comment comment1 = salesIte1.findMostHelpfulComment();
+        assertEquals(comment1, salesIte1.findMostHelpfulComment());
+    }
+
+    @Test
+    public void checkNoComments()
+    {
+        SalesItem salesIte1 = new SalesItem("MT", 100);
+    }
 }
+
+
+
 
