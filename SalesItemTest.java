@@ -69,4 +69,13 @@ public class SalesItemTest
         assertEquals("test name", salesIte1.getName());
         assertEquals(1000, salesIte1.getPrice());
     }
+
+    @Test
+    public void boundaryCheck()
+    {
+        SalesItem salesIte1 = new SalesItem("a", 123);
+        assertEquals(false, salesIte1.addComment("a", "a", 0));
+        assertEquals(false, salesIte1.addComment("b", "b", 6));
+    }
 }
+

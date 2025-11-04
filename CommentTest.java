@@ -47,5 +47,20 @@ public class CommentTest
         assertEquals(true, salesIte1.addComment("a", "a", 1));
         assertEquals(false, salesIte1.addComment("a", "b", 2));
     }
+
+
+    @Test
+    public void checkUpvoteDownvote()
+    {
+        Comment comment1 = new Comment("a", "a", 1);
+        comment1.upvote();
+        comment1.upvote();
+        comment1.upvote();
+        assertEquals(3, comment1.getVoteCount());
+        comment1.downvote();
+        assertEquals(2, comment1.getVoteCount());
+    }
 }
+
+
 
